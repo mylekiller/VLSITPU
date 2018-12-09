@@ -15,14 +15,6 @@ module ripple_carry_adder([3:0] data1, [3:0] data2, [3:0] sum);
 
 endmodule
 
-
-always @(*)
-begin
-
-end
-
-endmodule
-
 module full_adder(a, b, cin, sum, cout);
 	input a, b, cin;
 	output sum, cout;
