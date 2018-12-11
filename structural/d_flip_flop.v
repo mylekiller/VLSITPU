@@ -1,6 +1,5 @@
 // Taken from http://barrywatson.se/dd/dd_d_flip_flop_edge_triggered.html
 
-
 module d_flip_flop32b(Q, C, D);
    output wire    [31:0] Q;
    input  wire    C;
@@ -58,8 +57,8 @@ module d_flip_flop(Q, Qn, C, D);
    wire           DQ;   // Output from the D latch, input to the gated SR latch.
    wire           DQn;  // Output from the D latch, input to the gated SR latch.
    
-   inv            i1(Cn, C);
-   inv            i2(Cnn, Cn);   
+   not            n1(Cn, C);
+   not            n2(Cnn, Cn);   
    d_latch        dl(DQ, DQn, Cn, D);
    sr_latch_gated sr(Q, Qn, Cnn, DQ, DQn);   
 endmodule
@@ -75,7 +74,7 @@ module d_latch(Q, Qn, G, D);
    wire   D1;
    wire   Dn1;
 
-   inv   i1(Dn, D);   
+   not   n1(Dn, D);   
    and   a1(D1, G, D);
    and   a2(Dn1, G, Dn);   
 
