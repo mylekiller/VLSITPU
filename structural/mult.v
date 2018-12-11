@@ -1,11 +1,11 @@
 // multiplier
 
 module mult3b(product, a, b);
-input [2:0] a;
-input [2:0] b;
-output [5:0] product;
+	input [2:0] a;
+	input [2:0] b;
+	output [5:0] product;
 
-wire [2:1] sum0,[2:0] sum1,[2:0] sum2,[2:0] n1,[2:0] n2,[1:0] cout1,[2:0] cout2,[2:0] cout3;
+	wire [2:1] sum0,[2:0] sum1,[2:0] sum2,[2:0] n1,[2:0] n2,[1:0] cout1,[2:0] cout2,[2:0] cout3;
 
 	// Row 1
 	and 		and00 (product[0], a[0], b[0]);
