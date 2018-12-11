@@ -7,8 +7,8 @@ module mux2_1b(d, a, b, select);
 	wire not_c, clause1, clause2;
 
 	inv 	i1(not_c, c);
-	and		a1(a, c, clause1);
-	and		a2(b, not_c, clause2);
+	and		a1(a, not_c, clause1);
+	and		a2(b, c, clause2);
 	or		o1(clause1, clause2, d);
 
 endmodule
@@ -39,8 +39,6 @@ module mux2_16b(d, a, b, c);
 	mux2_1b 	m16(a[15], b[15], c, d[15]);
 
 endmodule
-
-
 
 
 module mux2_32b(d, a, b, c);
