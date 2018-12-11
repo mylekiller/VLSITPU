@@ -83,8 +83,4 @@ module mux2_32b(d, a, b, c);
 	mux2_1b 	m31(a[30], b[30], c, d[30]);
 	mux2_1b 	m32(a[31], b[31], c, d[31]);
 
-
-
-
-
 endmodule
