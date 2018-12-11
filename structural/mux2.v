@@ -14,11 +14,11 @@ module mux2_1b(d, a, b, select);
 endmodule
 
 
-module mux2_16b(d, a, b, c);
-	input wire [31:0] a;
-	input wire [31:0] b;
+module mux2_17b(d, a, b, c);
+	input wire [16:0] a;
+	input wire [16:0] b;
 	input wire c;
-	output wire [31:0] d;
+	output wire [16:0] d;
 
 	mux2_1b 	m1(a[0], b[0], c, d[0]);
 	mux2_1b 	m2(a[1], b[1], c, d[1]);
@@ -41,11 +41,11 @@ module mux2_16b(d, a, b, c);
 endmodule
 
 
-module mux2_32b(d, a, b, c);
-	input wire [31:0] a;
-	input wire [31:0] b;
+module mux2_34b(d, a, b, c);
+	input wire [33:0] a;
+	input wire [33:0] b;
 	input wire c;
-	output wire [31:0] d;
+	output wire [33:0] d;
 
 	mux2_1b 	m1(a[0], b[0], c, d[0]);
 	mux2_1b 	m2(a[1], b[1], c, d[1]);
@@ -82,5 +82,8 @@ module mux2_32b(d, a, b, c);
 	mux2_1b 	m30(a[29], b[29], c, d[29]);
 	mux2_1b 	m31(a[30], b[30], c, d[30]);
 	mux2_1b 	m32(a[31], b[31], c, d[31]);
+
+	mux2_1b 	m33(a[32], b[32], c, d[32]);
+	mux2_1b 	m34(a[33], b[33], c, d[33]);
 
 endmodule

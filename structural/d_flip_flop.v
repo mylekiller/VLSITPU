@@ -1,11 +1,11 @@
 // Taken from http://barrywatson.se/dd/dd_d_flip_flop_edge_triggered.html
 
 module d_flip_flop32b(Q, C, D);
-   output wire    [31:0] Q;
+   output wire    [33:0] Q;
    input  wire    C;
-   input  wire    [31:0] D;
+   input  wire    [33:0] D;
 
-   wire    [31:0] Qn;
+   wire    [33:0] Qn;
 
    d_flip_flop    d1(Q[0], Qn[0], C, D[0]);
    d_flip_flop    d2(Q[1], Qn[1], C, D[1]);
@@ -42,6 +42,9 @@ module d_flip_flop32b(Q, C, D);
    d_flip_flop    d30(Q[29], Qn[29], C, D[29]);
    d_flip_flop    d31(Q[30], Qn[30], C, D[30]);
    d_flip_flop    d32(Q[31], Qn[31], C, D[31]);
+
+   d_flip_flop    d33(Q[32], Qn[32], C, D[32]);
+   d_flip_flop    d34(Q[33], Qn[33], C, D[33]);
 
 endmodule
 

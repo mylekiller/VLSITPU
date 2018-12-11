@@ -1,10 +1,10 @@
-module xor32b (
+module xor34b (
 	number, sign, number_2comp
 	);
 
-	input wire [31:0] number;
+	input wire [33:0] number;
 	input wire sign;
-	output wire [31:0] number_2comp;
+	output wire [33:0] number_2comp;
 
 	xor 	x1(number[0], sign, number_2comp[0]);
 	xor 	x2(number[1], sign, number_2comp[1]);
@@ -41,5 +41,7 @@ module xor32b (
 	xor 	x30(number[29], sign, number_2comp[29]);
 	xor 	x31(number[30], sign, number_2comp[30]);
 	xor 	x32(number[31], sign, number_2comp[31]);
+	xor 	x33(number[32], sign, number_2comp[32]);
+	xor 	x34(number[33], sign, number_2comp[33]);
 
 endmodule
