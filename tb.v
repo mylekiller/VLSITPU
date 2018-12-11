@@ -16,6 +16,13 @@ module tpu_tb;
 		#10 sync = 0;
 		#10 out_HL = 1;
 		#10 out_HL = 0;
+	end
+	
+	always begin
+		#5 clk = !clk;
+	end
+	
+endmodule
 		
 		
 		
