@@ -5,7 +5,7 @@ module tpu_tb;
 	wire error;
 	reg [7:0] input1;
 	reg [7:0] input2;
-	wire [15:0] out;
+	wire [16:0] out;
 	
 	TPU_functional uut(reset, clk, out_HL, error, input1, input2, out);
 	
@@ -21,7 +21,10 @@ module tpu_tb;
 		#5 out_HL = 0;
 		#5 input1 = 8'b10001001; input2 = 8'b00001001;
 		#5 out_HL = 1;
-		#5 out_HL = 0; input1 = 8'd0; input2 = 8'd0;
+		#5 out_HL = 0; input1 = 8'd0; input2 = 8'd0; reset = 1;
+		#10 reset = 0; input1 = 8'b00000001; input2 = 8'b00000001;
+		#10 input1 = 8'd0; input2 = 8'd0;
+		
 	end
 	
 	always begin
