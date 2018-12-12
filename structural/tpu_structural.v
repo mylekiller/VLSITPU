@@ -1,4 +1,4 @@
-module TPU_structural (
+module tpu_structural (
 	reset, clk, out_HL,input1, input2, error, out
 	);
 
@@ -34,9 +34,9 @@ module TPU_structural (
 	or 			o1(t1_1, input1[3], input1[4]);
 	or 			o2(t2_1, input1[5], input1[6]);
 	or 			o3(norm_1, t2_1, t1_1);
-	or 			o1(t1_2, input2[3], input2[4]);
-	or 			o2(t2_2, input2[5], input2[6]);
-	or 			o3(norm_2, t2_2, t1_2);
+	or 			o4(t1_2, input2[3], input2[4]);
+	or 			o5(t2_2, input2[5], input2[6]);
+	or 			o6(norm_2, t2_2, t1_2);
 
 	/* Calculate ~mult_output~ */
 	mult4b		m1(mult_output, {norm_1, input1[2:0]}, {norm_2, input2[2:0]});

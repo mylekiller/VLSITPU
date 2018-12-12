@@ -17,7 +17,7 @@ module add4b(sum, input1, input2, cin);
 endmodule
 
 
-module add34b(sum, input1, input2, cin)
+module add34b(sum, input1, input2, cin);
 	input wire [33:0] input1;
 	input wire [33:0] input2;
 	input wire cin;
@@ -70,14 +70,14 @@ module fulladder(sum, cout, a, b, cin);
 	input wire a;
 	input wire b;
 	input wire cin;
-	output reg sum;
-	output reg cout;
+	output wire sum;
+	output wire cout;
 
 	wire c1, c2, c3;
 
 	xor 	x1(c1, a, b);
 	xor 	x2(sum, c1, cin);
 	and   	a1(c3, a, b);
-	or		o1(cout, c2, w3);
+	or		o1(cout, c2, c3);
 
 endmodule

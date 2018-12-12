@@ -81,8 +81,8 @@ module d_latch(Q, Qn, G, D);
    and   a1(D1, G, D);
    and   a2(Dn1, G, Dn);   
 
-   nor   n1(Qn, D1, Q);
-   nor   n2(Q, Dn1, Qn);
+   nor   n3(Qn, D1, Q);
+   nor   n4(Q, Dn1, Qn);
 endmodule
 
 module sr_latch_gated(Q, Qn, G, S, R);

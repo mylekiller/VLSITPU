@@ -4,12 +4,12 @@ module mux2_1b(d, a, b, select);
 	input wire select;
 	output wire d;
 
-	wire not_c, clause1, clause2;
+	wire not_select, clause1, clause2;
 
-	inv 	i1(not_c, c);
-	and		a1(a, not_c, clause1);
-	and		a2(b, c, clause2);
-	or		o1(clause1, clause2, d);
+	not 	i1(not_select, select);
+	and		a1(clause1, a, not_select);
+	and		a2(clause2, b, select);
+	or		o1(d, clause1, clause2);
 
 endmodule
 

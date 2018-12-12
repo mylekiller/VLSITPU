@@ -4,7 +4,7 @@ module shifter (
 
 	input wire [7:0] in;
 	input wire [4:0] n_shift;
-	output reg [33:0] out;
+	output wire [33:0] out;
 	output reg error;
 
 	wire [33:0] temp1;

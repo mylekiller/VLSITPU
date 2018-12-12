@@ -1,9 +1,9 @@
 // http://verilogbynaresh.blogspot.com/2013/07/design-of-4-bit-subtractor-using.html
 
 module sub4b(diff, a,b);
-	input [3:0] wire a;
-	input [3:0] wire b; 
-	output [3:0] wire diff;
+	input wire [3:0] a;
+	input wire [3:0] b; 
+	output wire [3:0] diff;
 
 	wire [2:0] s; 
 	wire [3:0] l;
