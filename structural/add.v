@@ -73,11 +73,13 @@ module fulladder(sum, cout, a, b, cin);
 	output wire sum;
 	output wire cout;
 
-	wire c1, c2, c3;
+	wire a1, a2, a3;
 
-	xor 	x1(c1, a, b);
-	xor 	x2(sum, c1, cin);
-	and   	a1(c3, a, b);
-	or		o1(cout, c2, c3);
+	xor 	x1(a1, a, b);
+	and	n1(a2, a, b);
+	and   n2(a3, a1, cin);
+
+	xor 	x2(sum, a1, cin);
+	or		o1(cout, a2, a3);
 
 endmodule

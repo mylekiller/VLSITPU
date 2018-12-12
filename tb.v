@@ -7,13 +7,14 @@ module tpu_tb;
 	reg [7:0] input2;
 	wire [16:0] out;
 	
-	TPU_functional uut(reset, clk, out_HL, error, input1, input2, out);
+	tpu_structural uut(reset, clk, out_HL, error, input1, input2, out);
 	
 	initial
 	begin
 		clk = 1; reset = 1; out_HL = 0; input1 = 8'b00001101; input2 = 8'b00001111;
+		#15
 		#5 reset = 0; //output should be (195)
-		#5 out_HL = 1;
+		out_HL = 1;
 		#5 out_HL = 0;
 		#5 input1 = 8'b00101001; input2 = 8'b00101111; //output should be (34560)
 		// when added to the previous number should be (34755)

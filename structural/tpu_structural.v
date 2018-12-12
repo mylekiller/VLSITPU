@@ -1,5 +1,5 @@
 module tpu_structural (
-	reset, clk, out_HL,input1, input2, error, out
+	reset, clk, out_HL,error, input1, input2, out
 	);
 
 	input wire reset, clk, out_HL;
@@ -7,7 +7,7 @@ module tpu_structural (
 	input wire [7:0] input2;
 
 	output wire error;
-	output wire [15:0] out;
+	output wire [16:0] out;
 
 	wire [33:0] accumulate;
 	wire [33:0] accumulate_wire;
@@ -15,7 +15,7 @@ module tpu_structural (
 
 	wire [33:0] product_regular;
 	wire [33:0] product_tcomp;
-	wire [5:0] 	mult_output;
+	wire [7:0] 	mult_output;
 
 	wire [4:0] 	exponent;
 	wire [4:0] 	exp_mod1;
@@ -55,10 +55,10 @@ module tpu_structural (
 	add34b		a2(accumulate_wire, accumulate, product_tcomp, sign); // sign is cin
 
 	/* Either 0 or accumulate wire goes to accumulate*/
-	mux2_34b 	m2(accumulate_wire_final, 0, accumulate_wire, reset);
+	mux2_34b 	m2(accumulate_wire_final, accumulate_wire, 34'b0, reset);
 
 	/* Only change on posedge */
-	d_flip_flop	d1(accumulate, clk, accumulate_wire_final);
+	d_flip_flop34b	d1(accumulate, clk, accumulate_wire_final);
 
 	/* See which bits to select */
 	mux2_17b	m3(out, accumulate[33:17], accumulate[16:0], out_HL);
