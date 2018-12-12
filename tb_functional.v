@@ -7,11 +7,11 @@ module tpu_tb;
 	reg [7:0] input2;
 	wire [16:0] out;
 	
-	tpu_structural uut(reset, clk, out_HL, error, input1, input2, out);
+	TPU_functional uut_func(reset, clk, out_HL, error, input1, input2, out);
 	
 	initial
 	begin
-		clk = 0; reset = 1; out_HL = 0; input1 = 8'b00001101; input2 = 8'b00001111;
+		clk = 1; reset = 1; out_HL = 0; input1 = 8'b00001101; input2 = 8'b00001111;
 		#15 reset = 0; out_HL = 1;//output should be (195) out_HL = 1;
 		#5 out_HL = 1;
 		#5 out_HL = 0;

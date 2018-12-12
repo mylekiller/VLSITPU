@@ -59,8 +59,11 @@ module tpu_structural (
 
 	/* Only change on posedge */
 	d_flip_flop34b	d1(accumulate, clk, accumulate_wire_final);
+	//always @(posedge clk) begin
+	//	accumulate = accumulate_wire_final;
+	//end
 
 	/* See which bits to select */
-	mux2_17b	m3(out, accumulate[33:17], accumulate[16:0], out_HL);
+	mux2_17b	m3(out, accumulate[16:0], accumulate[33:17], out_HL);
 
 endmodule

@@ -24,7 +24,7 @@ module add34b(sum, input1, input2, cin);
 	output wire [33:0] sum;
 
 	wire c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17;
-	wire c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32;
+	wire c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34;
 
 	fulladder fa1(sum[0], c1, input1[0], input2[0], cin);
 	fulladder fa2(sum[1], c2, input1[1], input2[1], c1);
@@ -62,7 +62,8 @@ module add34b(sum, input1, input2, cin);
 	fulladder fa30(sum[29], c30, input1[29], input2[29], c29);
 	fulladder fa31(sum[30], c31, input1[30], input2[30], c30);
 	fulladder fa32(sum[31], c32, input1[31], input2[31], c31);
-	fulladder fa33(sum[32], sum[33], input1[3], input2[3], c32);
+	fulladder fa33(sum[32], c33, input1[32], input2[32], c32);
+	fulladder fa34(sum[33], c34, input1[33], input2[33], c33);
 
 endmodule
 

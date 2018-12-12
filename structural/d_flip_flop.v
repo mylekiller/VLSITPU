@@ -6,45 +6,6 @@ module d_flip_flop34b(Q, C, D);
    input  wire    [33:0] D;
 
    wire    [33:0] Qn;
-	
-	not   i1(Qn[1], Q[1]);
-   not   i2(Qn[2], Q[2]);
-   not   i3(Qn[3], Q[3]);
-   not   i4(Qn[4], Q[4]);
-   not   i5(Qn[5], Q[5]);
-   not   i6(Qn[6], Q[6]);
-   not   i7(Qn[7], Q[7]);
-   not   i8(Qn[8], Q[8]);
-
-   not   i9(Qn[9], Q[9]);
-   not   i10(Qn[10], Q[10]);
-   not   i11(Qn[11], Q[11]);
-   not   i12(Qn[12], Q[12]);
-   not   i13(Qn[13], Q[13]);
-   not   i14(Qn[14], Q[14]);
-   not   i15(Qn[15], Q[15]);
-   not   i16(Qn[16], Q[16]);
-
-   not   i17(Qn[17], Q[17]);
-   not   i18(Qn[18], Q[18]);
-   not   i19(Qn[19], Q[19]);
-   not   i20(Qn[20], Q[20]);
-   not   i21(Qn[21], Q[21]);
-   not   i22(Qn[22], Q[22]);
-   not   i23(Qn[23], Q[23]);
-   not   i24(Qn[24], Q[24]);
-
-   not   i25(Qn[25], Q[25]);
-   not   i26(Qn[26], Q[26]);
-   not   i27(Qn[27], Q[27]);
-   not   i28(Qn[28], Q[28]);
-   not   i29(Qn[29], Q[29]);
-   not   i30(Qn[30], Q[30]);
-   not   i31(Qn[31], Q[31]);
-   not   i32(Qn[32], Q[32]);
-   not   i33(Qn[33], Q[33]);
-   not   i34(Qn[0], Q[0]);
-
 
    d_flip_flop    d1(Q[0], Qn[0], C, D[0]);
    d_flip_flop    d2(Q[1], Qn[1], C, D[1]);
